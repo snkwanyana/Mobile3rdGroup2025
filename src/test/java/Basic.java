@@ -26,10 +26,11 @@ public class Basic {
     @Test
     public void launchApp() throws InterruptedException {
 
+        //android.widget.TextView[@content-desc="App"]
         Thread.sleep(2000); // Wait for 2 seconds to ensure the app is fully loaded
         driver.findElement(By.xpath("//android.widget.TextView[@content-desc='Accessibility']")).click();
         Thread.sleep(2000);
-        driver.findElement(By.id("Custom View")).isDisplayed();
+        driver.findElement(By.xpath("//android.widget.TextView[@content-desc='Custom View']")).isDisplayed();
 
         System.out.println(System.getProperty("user.dir") + "/src/main/ApiDemos-debug.apk");
         System.out.println("App launched successfully!");
