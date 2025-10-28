@@ -50,6 +50,9 @@ public class APIDemosAnimationScreen {
         PageFactory.initElements(driver, this);
     }
 
+    public void animationPageIsDisplayed() {
+        bouncingBallsOption.isDisplayed();
+    }
     public void clickOnBouncingBallsOption() {
         bouncingBallsOption.click();
     }
