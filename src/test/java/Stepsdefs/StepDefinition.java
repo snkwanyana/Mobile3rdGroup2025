@@ -1,6 +1,7 @@
 package Stepsdefs;
 
 import Utils.MobileBase;
+import Utils.TakeScreenshots;
 import io.cucumber.java.en.*;
 
 public class StepDefinition extends MobileBase {
@@ -10,6 +11,7 @@ public class StepDefinition extends MobileBase {
         initDriver();
         apiDemosScreen1.clickOnAnimationOption();
         apiDemosAnimationScreen.animationPageIsDisplayed();
+        TakeScreenshots.takesSnapShot(driver, "Animation Page");
     }
     @When("I click the Event option")
     public void i_click_the_event_option() {
