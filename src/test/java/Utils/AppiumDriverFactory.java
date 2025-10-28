@@ -9,7 +9,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class AppiumDriverFactory {
-    private AndroidDriver driver;
+    private static AndroidDriver driver;
     public static AppiumDriverFactory instanceOfAppiumFactory;
 
     public AppiumDriverFactory(String appPath) {
@@ -31,7 +31,7 @@ public class AppiumDriverFactory {
         return instanceOfAppiumFactory;
     }
 
-    public AndroidDriver getDriver() {
+    public static AndroidDriver getDriver() {
         return driver;
     }
 
