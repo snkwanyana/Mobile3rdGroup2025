@@ -19,8 +19,12 @@ public class Basic {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 //        capabilities.setCapability("platformVersion", "11.0"); // Replace with your emulator's version
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("app",System.getProperty("user.dir") + "/src/main/ApiDemos-debug.apk"); // Replace with the path to your APK file
+//        capabilities.setCapability("app",System.getProperty("user.dir") + "/src/main/ApiDemos-debug.apk"); // Replace with the path to your APK file
         capabilities.setCapability("automationName", "UiAutomator2");
+//        capabilities.setCapability("appPackage", "io.appium.android.apis");
+//        capabilities.setCapability("appActivity", "io.appium.android.apis.ApiDemos");
+        capabilities.setCapability("appPackage", "com.android.chrome");
+        capabilities.setCapability("appActivity", "com.google.android.apps.chrome.Main");
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/"), capabilities);
     }

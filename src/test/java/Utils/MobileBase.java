@@ -16,12 +16,14 @@ public class MobileBase {
     public APIDemosAnimationScreen apiDemosAnimationScreen;
 
     public void initDriver() {
-        String appPath = System.getProperty("appPath", System.getProperty("user.dir") + "/src/main/ApiDemos-debug.apk");
+//        String appPath = System.getProperty("appPath", System.getProperty("user.dir") + "/src/main/ApiDemos-debug.apk");
+        String appPath = "com.android.chrome";
+//        String appPath = "io.appium.android.apis";
         AppiumDriverFactory.getInstanceOfAppiumFactory(appPath);
         this.driver = (AndroidDriver<WebElement>) AppiumDriverFactory.getDriver();
         apiDemosScreen1 = new APIDemosScreen1(driver);
         apiDemosAnimationScreen = new APIDemosAnimationScreen(driver);
-        driver.resetApp();
+//        driver.resetApp();
     }
 
 
