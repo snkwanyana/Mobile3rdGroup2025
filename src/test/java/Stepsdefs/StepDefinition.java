@@ -8,7 +8,8 @@ public class StepDefinition extends MobileBase {
 
     @Given("I am on the animation test page")
     public void i_am_on_the_animation_test_page() {
-        initDriver();
+        initDriver("com.android.chrome","com.google.android.apps.chrome.Main");
+        driver.get("https://www.ndosiautomation.co.za/");
         apiDemosScreen1.clickOnAnimationOption();
         apiDemosAnimationScreen.animationPageIsDisplayed();
         TakeScreenshots.takesSnapShot(driver, "Animation Page");

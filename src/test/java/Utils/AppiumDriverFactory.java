@@ -14,14 +14,14 @@ public class AppiumDriverFactory {
     private static AppiumDriver driver;
     public static AppiumDriverFactory instanceOfAppiumFactory;
 
-    public AppiumDriverFactory(String appPath) {
+    public AppiumDriverFactory(String appPath,String appActivity) {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
-//        capabilities.setCapability("app", appPath);
         capabilities.setCapability("automationName", "UiAutomator2");
         capabilities.setCapability("appPackage", appPath);
-        capabilities.setCapability("appium:appActivity", "com.google.android.apps.chrome.Main");
-//        capabilities.setCapability("appActivity", "io.appium.android.apis.ApiDemos");
+//        capabilities.setCapability("appPackage", "com.android.chrome");
+//        capabilities.setCapability("appActivity", "com.google.android.apps.chrome.Main");
+        capabilities.setCapability("appActivity", appActivity);
 
         capabilities.setCapability("noReset", true);
 
@@ -33,9 +33,9 @@ public class AppiumDriverFactory {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
-    public static AppiumDriverFactory getInstanceOfAppiumFactory(String appPath) {
+    public static AppiumDriverFactory getInstanceOfAppiumFactory(String appPath,String appActivity) {
         if (instanceOfAppiumFactory == null)
-            instanceOfAppiumFactory = new AppiumDriverFactory(appPath);
+            instanceOfAppiumFactory = new AppiumDriverFactory(appPath,appActivity);
         return instanceOfAppiumFactory;
     }
 
