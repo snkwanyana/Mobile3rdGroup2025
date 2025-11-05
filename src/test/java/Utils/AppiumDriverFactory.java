@@ -7,9 +7,10 @@ import org.testng.annotations.BeforeClass;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 public class AppiumDriverFactory {
-    private AndroidDriver driver;
+    private static AndroidDriver driver;
     public static AppiumDriverFactory instanceOfAppiumFactory;
 
     public AppiumDriverFactory(String appPath) {
@@ -23,6 +24,7 @@ public class AppiumDriverFactory {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
     public static AppiumDriverFactory getInstanceOfAppiumFactory(String appPath) {
@@ -31,7 +33,7 @@ public class AppiumDriverFactory {
         return instanceOfAppiumFactory;
     }
 
-    public AndroidDriver getDriver() {
+    public static AndroidDriver getDriver() {
         return driver;
     }
 
